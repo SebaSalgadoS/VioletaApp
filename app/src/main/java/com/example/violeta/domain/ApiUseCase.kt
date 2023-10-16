@@ -12,7 +12,7 @@ class ApiUseCase (val serviceVioleta:ServiceVioleta) {
         if(text != null){
             serviceVioleta.sendMole(text)
         }else{
-            Exception("No hay Nada")
+            throw Exception("No hay Nada")
         }
     }
 

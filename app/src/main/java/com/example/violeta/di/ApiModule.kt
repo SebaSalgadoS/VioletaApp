@@ -7,6 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiModule {
 
+    /*
     fun retrofit(): Retrofit {
         val interceptor = HttpLoggingInterceptor()
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
@@ -17,5 +18,7 @@ object ApiModule {
             .client(client)
             .build()
     }
+
+     */
 
 }

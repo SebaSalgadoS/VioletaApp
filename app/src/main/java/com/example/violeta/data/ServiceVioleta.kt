@@ -7,7 +7,7 @@ import retrofit2.http.POST
 
 interface ServiceVioleta {
 
-    @POST()
+    @POST("add")
     suspend fun sendMole(@Body user: DataAPI?): Call<DataAPI?>?
 
 }
