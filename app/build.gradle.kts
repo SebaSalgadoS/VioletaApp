@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.example.violeta"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.violeta"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -37,6 +37,7 @@ android {
 
 dependencies {
     val lifecycle_version = "2.4.1"
+    val koin_android_version = "3.5.0"
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -55,6 +56,11 @@ dependencies {
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
     implementation ("androidx.activity:activity-ktx:1.4.0")
     implementation ("androidx.fragment:fragment-ktx:1.4.1")
+
+    //Koin
+    implementation ("io.insert-koin:koin-android:$koin_android_version")
+    // Navigation Graph
+    implementation ("io.insert-koin:koin-androidx-navigation:$koin_android_version")
 
     // LiveData
     implementation ("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")

@@ -1,17 +1,18 @@
 package com.example.violeta.app
 
 import android.app.Application
-import com.example.violeta.data.ServiceVioleta
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import com.example.violeta.di.AppModuleImpl
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.GlobalContext.startKoin
 
 class VioletaApplication : Application() {
 
-    val retrofit by lazy {
-        Retrofit.Builder().baseUrl("http://54.198.38.242:5000").addConverterFactory(GsonConverterFactory.create()).build()
-    }
+    override fun onCreate() {
+        super.onCreate()
 
-    val violetaApiService by lazy {
-        retrofit.create(ServiceVioleta::class.java)
+        startKoin {
+            androidContext(this@VioletaApplication)
+            modules(AppModuleImpl)
+        }
     }
 }
